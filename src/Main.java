@@ -50,5 +50,9 @@ public class Main {
             else j++;
         }
         System.out.println(crypted);
+
+        System.out.println("Vuoi decifrare il testo? (s/n)");
+
+
     }
 }
