@@ -52,7 +52,16 @@ public class Main {
         System.out.println(crypted);
 
         System.out.println("Vuoi decifrare il testo? (s/n)");
-
-
+        if (input.nextLine().equalsIgnoreCase("s")) {
+            String decrypted = "";
+            int l = 0;
+            for (int i = 0; i < crypted.length(); i++) {
+                Lettera LetteraCriptata = new Lettera(crypted.codePointAt(i), keys[l]);
+                Lettera LetteraDecifrata = LetteraCriptata.trasla('-');
+                decrypted += (char)LetteraDecifrata.code;
+                l = (l == Skeys.length - 1) ? 0 : l + 1;
+            }
+            System.out.println("Testo decifrato: " + decrypted);
+        }
     }
 }
